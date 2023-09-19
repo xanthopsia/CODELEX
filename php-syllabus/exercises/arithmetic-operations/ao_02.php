@@ -7,7 +7,6 @@ function checkOddEven($number): string {
     }
 }
 
-// Example usage:
 $number = 7;
 $result = checkOddEven($number);
 echo $result ."\nbye!";
