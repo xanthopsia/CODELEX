@@ -5,7 +5,6 @@ echo "I'm thinking of a number between 1 and 100. Try to guess it.\n";
 
 $guess = (int)readline("> ");
 
-    // Check if the guess is correct
     if ($guess === $randomNumber) {
         echo "You guessed it! What are the odds?!?\n";
     } elseif ($guess < $randomNumber) {
