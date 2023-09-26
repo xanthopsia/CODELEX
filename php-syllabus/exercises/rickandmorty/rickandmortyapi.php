@@ -1,0 +1,28 @@
+<?php
+$apiUrl = "https://rickandmortyapi.com/api/episode";
+
+$response = file_get_contents($apiUrl);
+
+if ($response) {
+    $data = json_decode($response, true);
+
+    if ($data) {
+        //var_dump($data);
+        foreach ($data['results'] as $episode) {
+            $id = $episode['id'];
+            $name = $episode['name'];
+            $airDate = $episode['air_date'];
+            $episodeCode = $episode['episode'];
+
+            echo "ID: $id\n";
+            echo "Name: $name\n";
+            echo "Air Date: $airDate\n";
+            echo "Episode: $episodeCode\n";
+            echo "--------------------------\n";
+        }
+    } else {
+        echo "Unable to retrieve data from the API.\n";
+    }
+} else {
+    echo "Failed to make a request to the API.\n";
+}
