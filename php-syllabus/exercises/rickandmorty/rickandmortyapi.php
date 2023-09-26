@@ -9,15 +9,11 @@ if ($response) {
     if ($data) {
         //var_dump($data);
         foreach ($data['results'] as $episode) {
-            //$id = $episode['id'];
-            //$name = $episode['name'];
-            //$airDate = $episode['air_date'];
-            //$episodeCode = $episode['episode'];
 
-            echo "ID: $episode['id']\n";
-            echo "Name: $episode['name']\n";
-            echo "Air Date: $episode['air_date']\n";
-            echo "Episode: $episode['episode']\n";
+            echo "ID: {$episode['id']}\n";
+            echo "Name: {$episode['name']}\n";
+            echo "Air Date: {$episode['air_date']}\n";
+            echo "Episode: {$episode['episode']}\n";
             echo "--------------------------\n";
         }
     } else {
@@ -26,3 +22,4 @@ if ($response) {
 } else {
     echo "Failed to make a request to the API.\n";
 }
+?>
