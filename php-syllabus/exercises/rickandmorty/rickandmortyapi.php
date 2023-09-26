@@ -22,4 +22,4 @@ if ($response) {
 } else {
     echo "Failed to make a request to the API.\n";
 }
-?>
+
