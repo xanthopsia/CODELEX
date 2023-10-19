@@ -1,28 +1,14 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'UniversityAPI.php';
-require 'University.php';
-require 'UniversityCollection.php';
+
+use UniversityAPI\UniversityAPI;
 
 $api = new UniversityAPI();
 $country = readline("Enter country: ");
-$universitiesData = $api->getUniversitiesByCountry($country);
+$universities = $api->getUniversitiesByCountry($country);
 
-if (!$universitiesData) {
-    exit("Failed to retrieve data\n");
-}
-
-$universityCollection = new UniversityCollection();
-
-foreach ($universitiesData as $entry) {
-    $university = new University($entry->name, $entry->domains);
-    $universityCollection->addUniversity($university);
-}
-
-$universities = $universityCollection->getUniversities();
-
-foreach ($universities as $university) {
+foreach ($universities->getUniversities() as $university) {
     echo "University: {$university->getName()}" . PHP_EOL;
     foreach ($university->getDomains() as $domain) {
         echo "Domain: $domain" . PHP_EOL;
