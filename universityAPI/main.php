@@ -23,8 +23,8 @@ foreach ($universitiesData as $entry) {
 $universities = $universityCollection->getUniversities();
 
 foreach ($universities as $university) {
-    echo "University: {$university->name}" . PHP_EOL;
-    foreach ($university->domains as $domain) {
+    echo "University: {$university->getName()}" . PHP_EOL;
+    foreach ($university->getDomains() as $domain) {
         echo "Domain: $domain" . PHP_EOL;
     }
     echo "================\n";
